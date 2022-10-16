@@ -1,0 +1,278 @@
+*, *::before , *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary : hsl(26, 100%, 55%);
+    --secondary : hsl(25, 100%, 94%);
+    --text : rgba(113, 112, 112, 0.841);
+}
+
+
+body {
+    max-width: 1480px;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* header section  */
+header {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    border-bottom: 0.02px solid rgba(150, 154, 121, 0.387);
+}
+
+.close, .menu {
+    display: none;
+}
+
+.cart, .close {
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+}
+
+.avatar {
+    margin-left: 15px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.nav-item {
+    margin-left: 1em;
+}
+
+.nav-link {
+    color: rgb(8, 4, 4);
+    position: relative;
+}
+.nav-link span{
+    position: absolute;
+    bottom: -8px;
+    left: -1000px;
+    width: 100%;
+    height: 3px;
+    border-radius: 20px;
+    background: var(--primary);
+    transition: ease 0.3s;
+}
+.nav-item:hover .nav-link>span {
+    left: 0;
+}
+.nav-item:hover .nav-link {
+    color: var(--primary);
+}
+.cart {
+    width: 100%;
+}
+.product-count {
+    position: absolute;
+    font-size: 14px;
+    top: -10px;
+    right: -10px;
+    padding: 0 5px;
+    background: var(--primary);
+    border-radius: 50%;
+}
+
+/* content  */
+.carousel {
+    margin: auto;
+}
+
+.carousel-img {
+    width: 70%;
+    margin: auto;
+}
+
+/* for both carousel and lightbox */
+.colorbox img:hover {
+    filter: blur(1px)
+}
+
+.lightbox {
+    margin: auto;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 104px);
+    justify-content: center;
+}
+.lightbox-img {
+    width: 104px;
+    border-radius: 7px;
+}
+
+
+
+/* part-two  */
+.part-two {
+    padding: 25px;
+    align-self: center;
+}
+.company {
+    font-size: 12px;
+    word-spacing: 10px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.product-name {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.product-descr {
+    font-size: 15px;
+    font-weight: 300;
+    opacity: 0.8;
+}
+.count-value {
+    width: 35px!important;
+}
+.discount {
+    display: inline-block;
+    width: 38px;
+    height: 20px;
+    border-radius: 7px;
+    color: var(--primary);
+    background-color: rgba(255, 166, 0, 0.138);
+    font-size: 12px;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 20px;
+}
+.old-price {
+    font-size: 14px;
+    font-weight: 700;
+    opacity: 0.7;
+    text-decoration: line-through;
+}
+.plus, .minus, .count-value {
+    margin: 0;
+    border: none;
+    padding: 7px 20px;
+}
+.plus {
+    border-top-left-radius: 7px ;
+    border-bottom-left-radius: 7px ;
+    font-weight: bold;
+}
+.minus {
+    border-top-right-radius: 7px ;
+    border-bottom-right-radius: 7px ;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.add {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 7px;
+    padding: 7px 20px;
+    background: var(--primary);
+    color: #fff;
+    border: 2px solid var(--primary);
+    transition: 0.3s;
+}
+
+.add:hover {
+    background-color: #fff;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+
+
+@media (max-width: 985px) {
+    .navbar-nav {
+        flex-direction: row;
+    }
+    .nav-item {
+        display: inline-block!important;
+    }
+    .lightbox {
+        gap: 2px;
+    }
+    .lightbox-img {
+        width: 95px;
+    }
+}
+
+
+@media (max-width: 850px) {
+   
+    .close, .menu {
+        display: block;
+    }
+
+    .navbar {
+        position:inherit;
+    }
+
+    .nav-box{
+        overflow-x: hidden;
+        z-index: 10000;
+        position: absolute;
+        top: 0;
+        left: -1000px;
+        width: 50%;
+        height: 100vh;
+        padding: 20px 0;
+        background: orange;
+        color: white;
+        text-align: left;
+        transition: 0.3s;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .nav-item {
+        margin-bottom: 1em;
+    }
+    .nav-link span{
+        width: 120%;
+        height: 2px;
+    }
+    .nav-item:hover .nav-link span {
+        background: #fff!important;
+        left: -15px;
+    }
+    .nav-item:hover .nav-link {
+       color: #fff;
+    }
+    .carousel {
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    .content {
+        overflow-x: hidden;
+    }
+    .nav-box {
+        width: 60%;
+        overflow-x: hidden;
+    }
+    .carousel {
+        width: 80%;
+        margin: auto
+    }
+    .lightbox-img {
+        width: 100%;
+    }
+    .add {
+        width: 160px;
+        padding: 10px 20px;
+    }
+    .nav-link span {
+        width: 100%;
+    }
+}
