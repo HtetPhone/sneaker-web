@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-link {
+    @apply inline-block hover:text-primary pb-12 pt-9 border-b-4 border-b-transparent hover:border-primary ease-in-out delay-100 ;
+    
+}
+.mobile-menu {
+    left: -100%;
+    @apply ease-linear duration-200;
+}
+.slide-in {
+    left: 0;
+}
+.mobo-link {
+    @apply block font-bold hover:text-primary;
+}
+
+.overlay-layer {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #3d3b3b49;
+    @apply ease-linear duration-150;
+}
+
+.item-count {
+    font-size: 9px;
+    right: 0;
+    @apply absolute top-1 bg-primary text-white rounded-lg px-1 md:px-2;
+}
+
+.cart-popup {
+    @apply hidden p-3 px-2 bg-white absolute right-20 top-20 drop-shadow-lg rounded-md w-auto z-10;
+}
+
+.appear {
+    display: block;
+}
+
+.product {
+    @apply space-x-3 items-center ;
+}
+
+.product-img {
+    @apply w-12
+}
+
+@media (max-width: 420px) {
+    .cart-popup {
+        @apply right-8;
+    }
+}
